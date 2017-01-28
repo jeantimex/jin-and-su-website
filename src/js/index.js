@@ -13,6 +13,11 @@ $(document).ready(function() { //when the document is ready...
   var vertShift = 0;
   var horShift = 0;
 
+  var $BG3a   = $('#intro-her');          //Chris Silas Neal
+  var $BG3b   = $('#intro-her').find('.b');   //
+  var $BG3c   = $('#intro-her').find('.c');   //
+  var $BG3d   = $('#intro-her').find('.d');   //
+
   //apply the class "inview" to a section that is in the viewport
   $('section').bind('inview', function (event, visible) {
     if (visible == true) {
@@ -107,8 +112,12 @@ $(document).ready(function() { //when the document is ready...
 
   //function to be called whenever the window is scrolled or resized
   function Move() {
-    // TODO
-    // ...
+    if ($BG3a.hasClass("inview")) { // Intro Her - Chris Neal
+      $BG3a.css({'backgroundPosition': CalculateShift('middle', 'static', pos, (panelHeight * 3),  .6, 0)}); // city
+      $BG3b.css({'backgroundPosition': CalculateShift('middle', 'static', pos, (panelHeight * 3),  .4, 0), 'height': panelHeight}); // stars
+      $BG3c.css({'backgroundPosition': CalculateShift('middle', 'static', pos, (panelHeight * 3),  .2, 0), 'height': panelHeight}); // moon
+      $BG3d.css({'backgroundPosition': CalculateShift('middle', 'static', pos, (panelHeight * 3), -.4, 0), 'height': panelHeight}); // jess
+    }
   }
 
   Reposition(); //Reposition various elements appropriately for the window size
