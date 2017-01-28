@@ -1,0 +1,19 @@
+{
+  "name": "jin-and-su-website",
+  "version": "1.0.0",
+  "description": "Jin &amp; Su",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeantimex/jin-and-su-website.git"
+  },
+  "author": "Yong Su <jean.timex@gmail.com> (https://github.com/jeantimex)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jeantimex/jin-and-su-website/issues"
+  },
+  "homepage": "https://github.com/jeantimex/jin-and-su-website#readme"
+}
