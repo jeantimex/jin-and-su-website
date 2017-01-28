@@ -3,7 +3,15 @@ $(document).ready(function() { //when the document is ready...
   //save selectors as variables to increase performance
   var $window = $(window);
 
-  var windowHeight = $window.height(); //get the height of the window
+  // other variables
+  var windowHeight = $window.height();
+  var windowWidth = $window.width();
+  var panelHeight = $window.height();
+  var panelWidth = $window.width();
+  var positionOfBackground = (windowHeight/2) - (windowWidth/2);
+  var pos = $window.scrollTop(); //position of the scrollbar
+  var vertShift = 0;
+  var horShift = 0;
 
   //apply the class "inview" to a section that is in the viewport
   $('section').bind('inview', function (event, visible) {
@@ -24,7 +32,6 @@ $(document).ready(function() { //when the document is ready...
     inertia = how fast the background moves in relation to scrolling
   */
   function CalculateShift(valign, halign, pos, adjuster, vinertia, hinertia){
-
     var returnValue = '';
     var returnY = '';
     var returnX = '';
@@ -70,13 +77,36 @@ $(document).ready(function() { //when the document is ready...
 
   // if the browser window is resized...
   function Reposition() {
+    windowHeight = $window.height(); // get new height
+    windowWidth = $window.width(); // get new width
 
+    // set the panel height
+    panelHeight = windowHeight;
+
+    // figure out background size offset for middle placement
+    positionOfBackground = (windowHeight / 2) - 500;
+
+    $('.panel, .text').css('height', panelHeight);
+
+    // set the panel width
+    if (windowWidth > 1000) {
+      panelWidth = 1000;
+    } else {
+      panelWidth = windowWidth;
+    }
+    horShift = (windowWidth - panelWidth) * .5;
+
+    // scroll controller
+    if (windowHeight > 800) {
+      vertShift = ((windowHeight - panelHeight) / 2);
+    } else {
+      vertShift = 0;
+    }
+    $('body').css('padding-top', vertShift);
   }
 
   //function to be called whenever the window is scrolled or resized
   function Move() {
-    var pos = $window.scrollTop(); //position of the scrollbar
-
     // TODO
     // ...
   }
@@ -84,11 +114,12 @@ $(document).ready(function() { //when the document is ready...
   Reposition(); //Reposition various elements appropriately for the window size
 
   $window.resize(function(){ //if the user resizes the window...
-    Move(); //move the background images in relation to the movement of the scrollbar
     Reposition(); //reposition the navigation list so it remains vertically central
+    Move(); //move the background images in relation to the movement of the scrollbar
   });   
   
   $window.bind('scroll', function(){ //when the user is scrolling...
+    pos = $window.scrollTop();
     Move(); //move the background images in relation to the movement of the scrollbar
   });
 
