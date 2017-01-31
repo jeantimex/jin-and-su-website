@@ -47,6 +47,12 @@ $(document).ready(function() { //when the document is ready...
         returnY = (-((panelHeight + pos) - adjuster) * vinertia) + "px";
         break;
       case "middle":
+        console.log("---------------------------");
+        console.log("panelHeight: " + panelHeight);
+        console.log("pos: " + pos);
+        console.log("adjuster: " + adjuster);
+        console.log("vinertia: " + vinertia);
+        console.log("positionOfBackground: " + positionOfBackground);
         returnY = ((-((panelHeight + pos) - adjuster) * vinertia) + positionOfBackground)  + "px";
         break;
       case "bottom":
@@ -113,10 +119,10 @@ $(document).ready(function() { //when the document is ready...
   //function to be called whenever the window is scrolled or resized
   function Move() {
     if ($BG3a.hasClass("inview")) { // Intro Her - Chris Neal
-      $BG3a.css({'backgroundPosition': CalculateShift('middle', 'static', pos, (panelHeight * 3),  .6, 0)}); // city
-      $BG3b.css({'backgroundPosition': CalculateShift('middle', 'static', pos, (panelHeight * 3),  .4, 0), 'height': panelHeight}); // stars
-      $BG3c.css({'backgroundPosition': CalculateShift('middle', 'static', pos, (panelHeight * 3),  .2, 0), 'height': panelHeight}); // moon
-      $BG3d.css({'backgroundPosition': CalculateShift('middle', 'static', pos, (panelHeight * 3), -.4, 0), 'height': panelHeight}); // jess
+      $BG3a.css({'background-position': CalculateShift('middle', 'static', pos, (panelHeight * 3),  .6, 0)}); // city
+      $BG3b.css({'background-position': CalculateShift('middle', 'static', pos, (panelHeight * 3),  .4, 0), 'height': panelHeight}); // stars
+      $BG3c.css({'background-position': CalculateShift('middle', 'static', pos, (panelHeight * 3),  .2, 0), 'height': panelHeight}); // moon
+      $BG3d.css({'background-position': CalculateShift('middle', 'static', pos, (panelHeight * 3), -.4, 0), 'height': panelHeight}); // jess
     }
   }
 

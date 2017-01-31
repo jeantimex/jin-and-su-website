@@ -26,35 +26,49 @@
   z-index: 997;
 }
 
+.cover {
+  background-size: cover;
+  background-attachment: fixed;
+  }
+
 #title {
-  
-}
+  background-color: #990000;
+  }
 
 #intro {
   background-position: center center;
-}
+  background-color: #009900;
+  }
 
 #intro-her {                                                            /* 3 Chris Neal */
-    background: url('http://c15117992.r92.cf2.rackcdn.com/3a.jpg') 50% 0 no-repeat fixed;
+    background-image: url('../img/3a.jpg');
+    background-position: 50% 0;
+    background-repeat: no-repeat;
     background-color: black;
     }
-    
+
     #intro-her .b {
-        background: url('http://c15117992.r92.cf2.rackcdn.com/3b.png') 50% 0 repeat-x fixed;
+        background-image: url('../img/3b.png');
+        background-position: 50% 0;
+        background-repeat: repeat-x;
         width: 100%;
         position: absolute;
         z-index: 100;
         }
     
     #intro-her .c {
-        background: url('http://c15117992.r92.cf2.rackcdn.com/3c.png') 50% 0 no-repeat fixed;
+        background-image: url('../img/3c.png');
+        background-position: 50% 0;
+        background-repeat: no-repeat;
         width: 100%;
         position: absolute;
         z-index: 101;
         }
     
     #intro-her .d {
-        background: url('http://c15117992.r92.cf2.rackcdn.com/3d.png') 50% 0 no-repeat fixed;
+        background-image: url('../img/3d.png');
+        background-position: 50% 0;
+        background-repeat: no-repeat;
         width: 100%;
         position: absolute;
         z-index: 102;
@@ -64,3 +78,7 @@
         width: 340px;
         margin: 358px 0 0 555px;
         }
+
+#about-her {
+  background-color: #000099;
+  }
